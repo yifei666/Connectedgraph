@@ -1,11 +1,9 @@
 import sys
 import ast
-my_path = "C:\\Users\\Michael\\Desktop\\wyf\\intern\\connected_graph"
-sys.path.append(my_path)
 import functions as functions
 
 
-file = open(r"C:\Users\Michael\Desktop\wyf\intern\connected_graph\connected_graph.txt")
+file = open("connected_graph.txt","r")
 contents = file.read()
 link_list = ast.literal_eval(contents)
 file.close()
