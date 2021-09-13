@@ -1,4 +1,4 @@
-import sys
+#
 import ast
 import functions as functions
 
@@ -24,7 +24,7 @@ stack={}
 stack[list(link_list.keys())[0]]=0 #assign the first node in stack the 0 value
 # stack[list(link_list.keys())[1]]=1 #test
 # print("stack:"+ str(stack))
-
+#测试
 c=-1
 null_value=0
 while True:
