@@ -42,5 +42,3 @@ with open('graph3.json', 'w') as json_file:
   json.dump(graph3, json_file)
 with open('graph4.json', 'w') as json_file:
   json.dump(graph4, json_file)
-
-# backup_path(graph4, "A", "D")
