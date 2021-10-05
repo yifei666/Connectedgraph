@@ -1,6 +1,6 @@
 import copy
-
-# use dijsktra to get the primary shortest path
+# class shortestpath:
+    # use dijsktra to get the primary shortest path
 def dijnew(graph, start_node, end_node):
     graph_new = graph_simplify(graph)
     shortest_distance = {}

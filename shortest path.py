@@ -1,4 +1,6 @@
-from dijsktra import dijkstra, dijnew,graph_simplify, backup_path
+# from dijsktra import shortestpath as sp
+from dijsktra import dijnew,graph_simplify, backup_path
+import json
 graph1 = {
     "A": {"B": 1, "C": 2},
     "B": {"A": 1, "D": 3, "E": 5},
@@ -32,4 +34,13 @@ graph4 = {
     "D": {"B": [5, 6],"C": 2}
 }
 
-backup_path(graph4, "A", "D")
+with open('graph1.json', 'w') as json_file:
+  json.dump(graph1, json_file)
+with open('graph2.json', 'w') as json_file:
+  json.dump(graph2, json_file)
+with open('graph3.json', 'w') as json_file:
+  json.dump(graph3, json_file)
+with open('graph4.json', 'w') as json_file:
+  json.dump(graph4, json_file)
+
+# backup_path(graph4, "A", "D")
