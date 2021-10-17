@@ -1,8 +1,8 @@
 {
    "graph":{
       "A":{
-         "B":[
-            0.5,
+         "B":  [
+            {distance:0.5, latency: 10ms},
             2,
             10
          ],
