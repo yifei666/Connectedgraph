@@ -1,13 +1,19 @@
-### Solver test for graph3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Oct 12 14:32:08 2021
+
+@author: Michael
+"""
 
 from ortools.linear_solver import pywraplp
+from ortools.init import pywrapinit
 
 
-def Shortestpath():
-    """Linear programming sample."""
-    # Instantiate a Glop solver, naming it LinearExample.
+def main():
+    # Create the linear solver with the GLOP backend.
     solver = pywraplp.Solver.CreateSolver('GLOP')
 
+    # Create the variables x and y.
     a = solver.NumVar(0, 1, 'a')
     b = solver.NumVar(0, 1, 'b')
     c = solver.NumVar(0, 1, 'c')
@@ -16,38 +22,35 @@ def Shortestpath():
     f = solver.NumVar(0, 1, 'f')
     g = solver.NumVar(0, 1, 'g')
 
+
     print('Number of variables =', solver.NumVariables())
 
-    solver.Add(a + b == 1)
-    solver.Add(b - d == 0)
-    solver.Add(a - e - c == 0)
-    solver.Add(c + d - f == 0)
-    solver.Add(e + f - g == 0)
-    solver.Add(g == 1)
+    # Create a linear constraint, 0 <= x + y <= 2.
+    ct = solver.Constraint(0, 2, 'ct')
+    ct.SetCoefficient(x, 1)
+    ct.SetCoefficient(y, 1)
 
     print('Number of constraints =', solver.NumConstraints())
 
-    solver.Minimize(a + + 2 * b + 3 * c + 4 * d + 5 * e + f + 9 * g)
+    # Create the objective function, 3 * x + y.
+    objective = solver.Objective()
+    objective.SetCoefficient(x, 3)
+    objective.SetCoefficient(y, 1)
+    objective.SetMaximization()
 
-    # Solve the system.
-    status = solver.Solve()
+    solver.Solve()
 
-    if status == pywraplp.Solver.OPTIMAL:
-        print('Solution:')
-        print('Objective value =', solver.Objective().Value())
-        print('a =', a.solution_value())
-        print('b =', b.solution_value())
-        print('c =', c.solution_value())
-        print('d =', d.solution_value())
-        print('e =', e.solution_value())
-        print('f =', f.solution_value())
-        print('g =', g.solution_value())
-    else:
-        print('The problem does not have an optimal solution.')
-
-    print('\nAdvanced usage:')
-    print('Problem solved in %f milliseconds' % solver.wall_time())
-    print('Problem solved in %d iterations' % solver.iterations())
+    print('Solution:')
+    print('Objective value =', objective.Value())
+    print('x =', x.solution_value())
+    print('y =', y.solution_value())
 
 
-Shortestpath()
+if __name__ == '__main__':
+    pywrapinit.CppBridge.InitLogging('basic_example.py')
+    cpp_flags = pywrapinit.CppFlags()
+    cpp_flags.logtostderr = True
+    cpp_flags.log_prefix = False
+    pywrapinit.CppBridge.SetFlags(cpp_flags)
+
+    main()
