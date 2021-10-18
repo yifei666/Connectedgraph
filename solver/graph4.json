@@ -1,0 +1,31 @@
+{
+   "graph":{
+      "A":{
+         "B":[
+            {"distance": 3, "latency": 8},
+            {"distance": 4, "latency": 10}
+         ],
+         "C":{"distance": 8, "latency": 10}
+      },
+      "B":{
+         "C":{"distance": 2, "latency": 6},
+         "D":[
+            {"distance": 2, "latency": 6},
+            {"distance": 6, "latency": 12}
+         ]
+      },
+      "C":{
+         "B":{"distance": 2, "latency": 6},
+         "D":{"distance": 2, "latency": 4}
+      },
+      "D":{
+         "B":[
+            {"distance": 2, "latency": 6},
+            {"distance": 6, "latency": 12}
+         ],
+         "C":{"distance": 2, "latency": 4}
+      }
+   },
+   "start_node":"A",
+   "end_node":"D"
+}
