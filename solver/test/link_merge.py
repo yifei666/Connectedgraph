@@ -8,8 +8,8 @@ for f in read_files:
     with open(f, 'r') as current_file:
         raw = current_file.read()
         current_object = json.loads(raw)
-        main_object.update(current_object)
-with open("merged_file.json", "w") as outfile:
+        main_object.append(current_object)
+with open("merged_link.json", "w") as outfile:
     raw = json.dumps(main_object, indent=4, sort_keys=True)
     outfile.write(raw)
     outfile.close()
