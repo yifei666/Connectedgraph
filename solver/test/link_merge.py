@@ -1,15 +1,23 @@
-import glob
 import json
 
+def parsing(filename, start_node, end_node):
+    f = open(filename)
+    data = json.load(f)
 
-read_files = glob.glob("*.json")
-main_object = {}
-for f in read_files:
-    with open(f, 'r') as current_file:
-        raw = current_file.read()
-        current_object = json.loads(raw)
-        main_object.append(current_object)
-with open("merged_link.json", "w") as outfile:
-    raw = json.dumps(main_object, indent=4, sort_keys=True)
-    outfile.write(raw)
-    outfile.close()
+    cost = {}
+    delay = {}
+
+    for link in data:
+        id = link["id"]
+        latency = link["latency"]
+        cost = link["available_bandwidth"]
+        parentnode = link["ports"][0]["id"]
+        childnode = link["ports"][1]["id"]
+        print(parentnode)
+        cost["graph"]=parentnode
+        # cost["graph"][parentnode].append(childnode)
+        print(cost)
+
+
+
+parsing("multilink.json", "A", "F")

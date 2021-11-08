@@ -35,10 +35,10 @@ def dijnew(graph, start_node, end_node):
             print('Path not reachable')
             break
     path.insert(0, start_node)
-    if shortest_distance[end_node] != infinity:  # check if the end_node has been reached
-        print('Shortest distance is ' + str(shortest_distance[end_node]))
-        print('And the path is ' + str(path))
-    return path
+    # if shortest_distance[end_node] != infinity:  # check if the end_node has been reached
+    #     print('Shortest distance is ' + str(shortest_distance[end_node]))
+    #     print('And the path is ' + str(path))
+    return [shortest_distance[end_node], path]
 
 
 # make the non-simple graph to be the simple graph

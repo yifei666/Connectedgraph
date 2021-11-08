@@ -1,0 +1,104 @@
+[
+    {
+        "availability": 56.37376656633328,
+        "available_bandwidth": 3,
+        "id": "Link1",
+        "latency": 15,
+        "name": "miami-Boca.amLight.sdx",
+        "packet_loss": 59.621339166831824,
+        "ports": [
+            {
+                "id": "A",
+                "label_range": [
+                    "label_range",
+                    "label_range"
+                ],
+                "name": "urn:sdx:port:amlight.net:Novi06:9",
+                "node": "urn:sdx:port:amlight.net:Novi06",
+                "short_name": "9",
+                "status": "up"
+            },
+            {
+                "id": "B",
+                "label_range": [
+                    "label_range",
+                    "label_range"
+                ],
+                "name": "urn:sdx:port:amlight.net:Novi06:10",
+                "node": "urn:sdx:port:amlight.net:Novi06",
+                "short_name": "10",
+                "status": "up"
+            }
+        ],
+        "short_name": "Miami-BocaRaton",
+        "total_bandwidth": 80083.7389632821
+    },
+    {
+        "availability": 56.37376656633328,
+        "available_bandwidth": 4,
+        "id": "Link2",
+        "latency": 20,
+        "name": "miami-Boca.amLight.sdx",
+        "packet_loss": 59.621339166831824,
+        "ports": [
+            {
+                "id": "B",
+                "label_range": [
+                    "label_range",
+                    "label_range"
+                ],
+                "name": "urn:sdx:port:amlight.net:Novi06:9",
+                "node": "urn:sdx:port:amlight.net:Novi06",
+                "short_name": "9",
+                "status": "up"
+            },
+            {
+                "id": "C",
+                "label_range": [
+                    "label_range",
+                    "label_range"
+                ],
+                "name": "urn:sdx:port:amlight.net:Novi06:10",
+                "node": "urn:sdx:port:amlight.net:Novi06",
+                "short_name": "10",
+                "status": "up"
+            }
+        ],
+        "short_name": "Miami-BocaRaton",
+        "total_bandwidth": 80083.7389632821
+    },
+    {
+        "availability": 56.37376656633328,
+        "available_bandwidth": 5,
+        "id": "Link3",
+        "latency": 18,
+        "name": "miami-Boca.amLight.sdx",
+        "packet_loss": 59.621339166831824,
+        "ports": [
+            {
+                "id": "C",
+                "label_range": [
+                    "label_range",
+                    "label_range"
+                ],
+                "name": "urn:sdx:port:amlight.net:Novi06:9",
+                "node": "urn:sdx:port:amlight.net:Novi06",
+                "short_name": "9",
+                "status": "up"
+            },
+            {
+                "id": "A",
+                "label_range": [
+                    "label_range",
+                    "label_range"
+                ],
+                "name": "urn:sdx:port:amlight.net:Novi06:10",
+                "node": "urn:sdx:port:amlight.net:Novi06",
+                "short_name": "10",
+                "status": "up"
+            }
+        ],
+        "short_name": "Miami-BocaRaton",
+        "total_bandwidth": 80083.7389632821
+    }
+]
