@@ -2,7 +2,7 @@ from ortools.linear_solver import pywraplp
 import numpy as np
 
 max_latency = input("Please input the max latency for the network(ms): ")
-max_packetloss = input("Please input the max packet loss for the network: ")
+
 
 def create_data_model():
     data = {}
@@ -19,13 +19,12 @@ def create_data_model():
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0, 0, 0],  # 9
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0],  # 10
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], # 11
-        [0.14, 0.17, 0.16, 0.1, 0.01, 0.1, 0.2, 0.34, 0.2, 0.08, 0.3, 0.4, 0.1, 0.01, 0.05, 0.05, 0.08, 0.2, 0.16, 0.34, 0.08, 0.3],
-        [59, 50, 62, 18, 30, 15, 30, 20, 50, 10, 22, 10, 22, 10, 12, 18, 25, 22, 62, 20, 25, 22]
-    ]
+        [0.14, 0.17, 0.16, 0.1, 0.01, 0.1, 0.2, 0.34, 0.2, 0.08, 0.3, 0.4, 0.1, 0.01, 0.05, 0.05, 0.08, 0.2, 0.16, 0.34, 0.08, 0.3]]
+
 
     data['bounds'] = [-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
     data['bounds'].append(int(max_latency)) # append the user input min_latency to the RHS of the last constraint
-    data['bounds'].append(int(max_packetloss))
+
 
     # data['obj_coeffs'] = [3, 4, 8, 2, 5, 6, 2, 2, 5, 6, 2]
     data['obj_coeffs'] = [0.6, 1.1, 0.72, 0.2, 0.01, 0.07, 0.3, 0.2, 0.1, 0.06, 0.2, 1.6, 0.1, 0.05, 0.15, 0.07, 0.1, 0.1, 0.72, 0.2, 0.1, 0.2]
