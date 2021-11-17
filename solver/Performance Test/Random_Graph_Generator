@@ -1,7 +1,0 @@
-import networkx as ntx
-import random
-
-G = ntx.gnp_random_graph(10, 15)
-ntx.draw(G)
-
-
